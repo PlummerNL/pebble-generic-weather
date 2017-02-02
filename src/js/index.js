@@ -68,7 +68,11 @@ var GenericWeather = function() {
           'GW_DAY': (json.dt > json.sys.sunrise && json.dt < json.sys.sunset) ? 1 : 0,
           'GW_CONDITIONCODE': condition,
           'GW_SUNRISE': json.sys.sunrise,
-          'GW_SUNSET': json.sys.sunset
+          'GW_SUNSET': json.sys.sunset,
+          'GW_WINDDIR': json.wind.deg,
+          'GW_WINDSPEED': json.wind.speed,
+          'GW_PRESSURE': json.main.pressure,
+          'GW_HUMIDITY': json.main.humidity
         });
       } else {
         console.log('weather: Error fetching data (HTTP Status: ' + req.status + ')');
