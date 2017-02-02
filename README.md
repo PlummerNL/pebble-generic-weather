@@ -6,7 +6,7 @@ Includes a simple test app as a proof of concept usage of a weather C API.
  
 ![basalt](screenshots/basalt.png)
 
-> This library is a fork of the excellent [owm-weather](https://github.com/pebble-hacks/owm-weather) one.
+> This library is a fork of the excellent pebble-generic-weather one.
 > A lot of code has not been changed or just a little.
 > All the credits go to @C-D-Lewis @cat-haines and @Katharine ! Thanks for your work
 
