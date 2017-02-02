@@ -56,6 +56,10 @@ typedef struct {
   time_t timesunrise;
   //! Sunset time UTC
   time_t timesunset;
+  int16_t winddir;
+  int16_t windspeed;
+  int16_t pressure;
+  int16_t humidity;
 } GenericWeatherInfo;
 
 //! Possible weather providers
