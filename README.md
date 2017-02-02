@@ -3,7 +3,7 @@
 Library for easy fetching of weather data from various providers.
 
 Includes a simple test app as a proof of concept usage of a weather C API.
-
+ 
 ![basalt](screenshots/basalt.png)
 
 > This library is a fork of the excellent [owm-weather](https://github.com/pebble-hacks/owm-weather) one.
@@ -23,7 +23,7 @@ var genericWeather = new GenericWeather();
 
 * Call `genericWeather.appMessageHandler()` in an `appmessage` handler so that it can message the C side.
 
-```
+,```
 Pebble.addEventListener('appmessage', function(e) {
   genericWeather.appMessageHandler(e);
 });
@@ -75,6 +75,6 @@ Read `include/pebble-generic-weather.h` for function and `enum` documentation.
 
 **Available now**
 
-* Description, temperature in K/C/F, location name, condition code, day/night status, sunrise/sunset
+* Description, temperature in K/C/F, location name, condition code, day/night status, sunrise/sunset, windspeed, winddirection, humidity and pressure.
 
 
