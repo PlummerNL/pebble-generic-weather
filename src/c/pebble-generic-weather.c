@@ -1,7 +1,7 @@
 #include <pebble.h>
 #include <pebble-events/pebble-events.h>
 
-#include "pebble-generic-weather.h"
+#include "include/pebble-generic-weather.h"
 
 static GenericWeatherInfo *s_info;
 static GenericWeatherCallback *s_callback;
@@ -40,6 +40,18 @@ static void inbox_received_handler(DictionaryIterator *iter, void *context) {
 
     Tuple *sunset_tuple = dict_find(iter, MESSAGE_KEY_GW_SUNSET);
     s_info->timesunset = sunset_tuple->value->int32;
+    
+    Tuple *winddir_tuple = dict_find(iter, MESSAGE_KEY_GW_WINDDIR);
+    s_info->winddir = winddir_tuple->value->int32;
+    
+    Tuple *windspeed_tuple = dict_find(iter, MESSAGE_KEY_GW_WINDSPEED);
+    s_info->windspeed = windspeed_tuple->value->int32; 
+    
+    Tuple *pressure_tuple = dict_find(iter, MESSAGE_KEY_GW_PRESSURE);
+    s_info->pressure = pressure_tuple->value->int32; 
+    
+    Tuple *humidity_tuple = dict_find(iter, MESSAGE_KEY_GW_HUMIDITY);
+    s_info->humidity = humidity_tuple->value->int32; 
 
     s_status = GenericWeatherStatusAvailable;
     s_callback(s_info, s_status);
